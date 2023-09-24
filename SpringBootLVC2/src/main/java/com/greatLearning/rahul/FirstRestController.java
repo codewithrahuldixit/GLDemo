@@ -12,6 +12,7 @@ public class FirstRestController {
 
 	@Autowired 
 	Student student;
+	
 	@RequestMapping("/hello")
 	public String sayHello() {
 		return "Hello World i am your First Rest Controller!!!!";
@@ -26,7 +27,10 @@ public class FirstRestController {
 	public List<Student> getStudents() {
 		return Arrays.asList(	
 				new Student(1,"Rahul"),
-				new Student(2,"Paras")
+				new Student(2,"Paras"),
+				new Student(3,"Kunal"),
+				new Student(4,"Dixit"),
+				new Student(5,"Shikha")
 				);
 			
 	}
