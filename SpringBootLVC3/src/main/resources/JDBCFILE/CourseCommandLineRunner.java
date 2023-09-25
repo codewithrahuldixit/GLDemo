@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class CourseCommandLineRunner implements CommandLineRunner{
 	
-	@Autowired
+	//@Autowired
 	CourseRepository repository;
 
 	@Override
