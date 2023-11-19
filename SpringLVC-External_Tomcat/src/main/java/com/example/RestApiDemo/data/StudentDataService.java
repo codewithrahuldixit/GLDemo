@@ -13,10 +13,14 @@ import com.example.RestApiDemo.model.Student;
 public class StudentDataService {
 
 	private StudentRepository repository;
-	
+	static int sid=100;
 	public StudentDataService(StudentRepository repository) {
 		super();
 		this.repository = repository;
+		repository.save(new Student(++sid,"Rahul","rahul@gmail.com"));
+		repository.save(new Student(++sid,"Shikha","Shikha@gmail.com"));
+		repository.save(new Student(++sid,"Viraj","Viraj@gmail.com"));
+		repository.save(new Student(++sid,"Sonal","Sonal@gmail.com"));
 	}
 	public List<Student> reteriveAll() {
 		return repository.findAll();
@@ -32,7 +36,7 @@ public class StudentDataService {
 		return student;
 	}
 	public ResponseEntity<Student> storeStudent(Student student) {
-	
+		student.setId(++sid);
 		repository.save(student);
 		URI location = ServletUriComponentsBuilder
 				//localhost:9090/students/104

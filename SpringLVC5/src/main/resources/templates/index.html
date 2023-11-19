@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>Student Management Application</title>
+
+<body>
+	<h1 th:text="#{index.heading(${stu.email})}"> Heading</h1>
+	<h1>The Student Information as follows</h1>
+	<h2 th:text="${stu.id}">Student Id</h2>
+	<h2 th:text="${stu.name}">Student Name</h2>
+	<h2 th:text="${stu.email}">Student Email</h2>
+	<a th:href="@{https://www.google.com}" target="_new"> Google Link</a>
+	<hr>
+	<!-- Capture The Object And Access the attribute in the tag Only-->
+	<div th:object="${stu}">
+		<h1>This Value Of Student Fetched Using Selection Expression</h1>
+		<h2 th:text="*{id}">Student Id</h2>
+		<h2 th:text="*{name}">Student Name</h2>
+		<h2 th:text="*{email}">Student Email</h2>
+	</div>
+</body>
+
+</html>

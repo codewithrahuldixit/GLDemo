@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>Student Management Application</title>
+
+<body>
+	<div>
+		<h1>Student List</h1>
+		<table>
+			<thead>
+				<th>Student Name</th>
+				<th>Student Email</th>
+				<th>Action</th>
+			</thead>
+			<tr th:each="students:${student}">
+				<td th:text="${student.name}">Student Name</td>
+				<td th:text="${student.email}">Student Email</td>
+				<td>
+					<a th:href="@{/updateStudent}"></a>
+					<a th:href="@{/deletestudent}"></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

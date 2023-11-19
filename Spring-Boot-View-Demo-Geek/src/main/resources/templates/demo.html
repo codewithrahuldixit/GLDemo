@@ -1,0 +1,25 @@
+<!doctype html>
+<html xmlns="https://www.thymeleaf.org">
+
+<head>
+
+	<title>Thyme Leaf Expression Language Demo</title>
+</head>
+
+<body>
+	<h1 th:text = "#{activation.msg(${email})}"> Message </h1>
+	<h1>Student Information Using Variable Expression</h1>
+	
+	<h2 th:text="${student.name}">Name</h2>
+	<h2 th:text="${student.id}">Student ID</h2>
+	<h2 th:text="${student.email}">Student Email</h2>
+	<hr>
+	<h1>Thymeleaf Selection Expression</h1>
+	<div th:object="${student}">
+		Student Name : <h2 th:text="*{name}">Name</h2>
+		Student Id :<h2 th:text="*{id}">Student ID</h2>
+		Student Email :<h2 th:text="*{email}">Student Email</h2>
+	</div>
+</body>
+
+</html>

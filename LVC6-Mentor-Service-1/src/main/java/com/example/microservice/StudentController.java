@@ -1,24 +1,17 @@
-package com.example.RestApiDemo.controller;
+package com.example.microservice;
 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.example.RestApiDemo.UserNotFoundException;
-import com.example.RestApiDemo.data.StudentDataService;
-import com.example.RestApiDemo.model.Student;
-
-//@RestController
-@Controller
+@RestController
 public class StudentController {
-	
 	private StudentDataService service;
 	
 	public StudentController(StudentDataService service) {
@@ -29,11 +22,9 @@ public class StudentController {
 
 	
 /// All The Students Stored in the databasse---/students
-
 	@GetMapping("/students")
-	public String  getAllStudents(Model model) {
-		model.addAttribute("students",service.reteriveAll());
-		return "studentlist";
+	public List<Student>  getAllStudents() {
+		return service.reteriveAll();
 	}
 	// find the Specific user with specific id given in the url
 	@GetMapping("/students/{id}")

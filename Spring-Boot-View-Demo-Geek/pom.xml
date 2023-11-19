@@ -9,11 +9,11 @@
 		<version>3.1.5</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example.RestApiDemo</groupId>
-	<artifactId>SpringLVC5</artifactId>
+	<groupId>com.example.bootview</groupId>
+	<artifactId>LVC7-Tomcat-External</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringLVC5</name>
-	<description>Demo project for Spring Boot Database with RestApi</description>
+	<name>Spring-Boot-View-Demo-Geek</name>
+	<description>Demo project for Spring Boot View</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -56,6 +56,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<builder>paketobuildpacks/builder-jammy-base:latest</builder>
+					</image>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
